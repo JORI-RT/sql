@@ -42,4 +42,16 @@ from rect
 group by postal_flg3
 
 -- 54
+select
+    c.customer_id ,
+    address ,
+    case substr(address ,1,3) 
+        WHEN '埼玉県' THEN '11'
+        WHEN '千葉県' THEN '12'
+        WHEN '東京都' THEN '13'
+        WHEN '神奈川' THEN '14'
+    end prefecture_cd
+from customer c
+limit 10
 
+-- 55
